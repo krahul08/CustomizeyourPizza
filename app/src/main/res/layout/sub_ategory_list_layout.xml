@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/categoryItemLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_small"
+    >
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="@dimen/margin_extra_large_56sp"
+            android:layout_height="@dimen/margin_extra_large_56sp"
+            android:orientation="horizontal"
+            android:id="@+id/imageLayout"
+            android:gravity="center"
+            android:background="@drawable/circular_shape_design_for_layout">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/foodCategoryImage"
+                android:layout_width="@dimen/margin_large_48dp"
+                android:layout_height="@dimen/margin_large_48dp"
+                android:layout_gravity="center"
+                android:src="@drawable/pizza"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/arrow"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_play_arrow_black_48dp"
+            android:layout_gravity="center"
+            android:visibility="visible"
+            android:layout_marginStart="@dimen/start_margin"
+            android:layout_marginLeft="@dimen/start_margin" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/categoryNameLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/categoryName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/colorBlack"
+            android:layout_gravity="center"
+            android:textSize="@dimen/textSize_very_small" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

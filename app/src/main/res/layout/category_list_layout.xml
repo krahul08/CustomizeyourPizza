@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/categoryItemLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/margin_small"
+    android:layout_marginEnd="@dimen/margin_small"
+    android:layout_marginTop="@dimen/margin_small"
+    android:layout_marginBottom="@dimen/margin_very_small">
+
+
+    <LinearLayout
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:orientation="vertical"
+        android:id="@+id/imageLayout"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/circular_shape_design_for_layout">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/foodCategoryImage"
+            android:layout_width="@dimen/margin_large_48dp"
+            android:layout_height="@dimen/margin_large_48dp"
+            android:layout_gravity="center"
+            android:src="@drawable/pizza"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/categoryNameLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_below="@+id/imageLayout"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:id="@+id/categoryName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:gravity="center"
+            android:textColor="@color/colorWhite"
+            android:layout_gravity="center"
+            android:textSize="@dimen/textSize_very_small" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <!--category list layout-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            android:layout_weight=".15"
+            android:background="@color/colorBlack"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/categoryList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </android.support.v7.widget.RecyclerView>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            android:layout_margin="@dimen/margin_very_small"
+            android:layout_weight=".85"
+            android:orientation="horizontal"
+            android:background="@color/colorWhite"
+            android:weightSum="1">
+
+            <!--Sub category list layout-->
+            <LinearLayout
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_weight=".22"
+                android:background="@color/colorWhite"
+                android:orientation="vertical"
+                tools:ignore="NestedWeights">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/subCategoryList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </android.support.v7.widget.RecyclerView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".78"
+                android:orientation="vertical"
+                android:background="@color/colorWhite">
+
+
+
+                <!--outer circle frame layout-->
+
+                <android.support.v4.widget.NestedScrollView
+                    android:id="@+id/nestedView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/foodItemLabelLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/foodItemName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_small"
+                            android:layout_marginLeft="@dimen/margin_small"
+                            android:layout_marginTop="@dimen/margin_small"
+                            android:text="Chicken Tandoori"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/foodItemDescription"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_small"
+                            android:text="new taste"
+                            android:textSize="12sp"
+                            android:layout_marginTop="@dimen/margin_very_small"
+                            android:layout_marginLeft="@dimen/margin_small" />
+                    </LinearLayout>
+
+                    <FrameLayout
+                        xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:tools="http://schemas.android.com/tools"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/frameLayout"
+                        android:layout_below="@+id/foodItemLabelLayout"
+                        android:layout_marginTop="@dimen/margin_small">
+
+                        <RelativeLayout
+                            android:id="@+id/outerMainLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone">
+
+                            <!--image 1 layout-->
+                            <RelativeLayout
+                                android:id="@+id/image1Layout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:elevation="@dimen/margin_small"
+                                android:layout_marginStart="@dimen/margin_small"
+                                android:layout_marginTop="@dimen/margin_extra_large_64sp"
+                                android:layout_marginLeft="@dimen/margin_small">
+
+                                <ImageView
+                                    android:id="@+id/image1"
+                                    android:layout_width="65dp"
+                                    android:layout_height="45dp"
+                                    android:src="@drawable/pizza" />
+
+                                <TextView
+                                    android:id="@+id/image1Text"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:layout_centerHorizontal="true"
+                                    android:textSize="@dimen/textSize_very_small"
+                                    android:layout_below="@+id/image1"/>
+
+                            </RelativeLayout>
+
+                            <!--image 2 layout-->
+                            <RelativeLayout
+                                android:id="@+id/image2Layout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:elevation="@dimen/margin_small"
+                                android:layout_below="@+id/image1Layout"
+                                android:layout_marginTop="@dimen/margin_extra_large_56sp"
+                                android:layout_marginStart="@dimen/margin_small"
+                                android:layout_marginLeft="@dimen/margin_small">
+
+                                <ImageView
+                                    android:id="@+id/image2"
+                                    android:layout_width="65dp"
+                                    android:layout_height="45dp"
+                                    android:src="@drawable/pizza"
+                                    android:layout_marginStart="@dimen/margin_small"
+                                    android:layout_marginLeft="@dimen/margin_small" />
+
+
+                                <TextView
+                                    android:id="@+id/image2Text"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Chicken Tikka"
+                                    android:gravity="center"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_below="@+id/image2"
+                                    android:textSize="@dimen/textSize_very_small"/>
+
+                            </RelativeLayout>
+
+                            <!--image 3 layout-->
+                            <RelativeLayout
+                                android:id="@+id/image3Layout"
+                                android:layout_width="80dp"
+                                android:layout_height="60dp"
+                                android:layout_centerHorizontal="true"
+                                android:elevation="@dimen/margin_small"
+                                android:layout_alignParentTop="true" >
+
+                                <TextView
+                                    android:id="@+id/image3Text"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Jalapenos"
+                                    android:gravity="center"
+                                    android:layout_below="@id/image3"
+                                    android:layout_marginTop="@dimen/marginMedium2"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_alignParentTop="true"
+                                    android:textSize="@dimen/textSize_very_small"/>
+
+
+                                <ImageView
+                                    android:id="@+id/image3"
+                                    android:layout_width="65dp"
+                                    android:layout_height="45dp"
+                                    android:src="@drawable/pizza"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginBottom="@dimen/start_margin"/>
+
+
+                            </RelativeLayout>
+
+                            <!--image 4 lyout-->
+                            <RelativeLayout
+                                android:id="@+id/image4Layout"
+                                android:layout_width="65dp"
+                                android:layout_height="65dp"
+                                android:elevation="@dimen/margin_small"
+                                android:src="@drawable/pizza"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="@dimen/margin_extra_large_64sp"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginEnd="@dimen/margin_small"
+                                android:layout_marginRight="@dimen/margin_small"
+                                android:gravity="center">
+
+
+                                <ImageView
+                                    android:id="@+id/image4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="45dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:elevation="@dimen/margin_small"
+                                    android:src="@drawable/pizza" />
+
+                                <TextView
+                                    android:id="@+id/image4Text"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Mushroom"
+                                    android:textSize="@dimen/textSize_very_small"
+                                    android:layout_marginStart="@dimen/margin_very_small"
+                                    android:layout_below="@+id/image4"
+                                    android:layout_marginLeft="@dimen/margin_very_small" />
+
+
+
+                            </RelativeLayout>
+
+                            <!--image 5 layout-->
+                            <RelativeLayout
+                                android:id="@+id/image5Layout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/image4Layout"
+                                android:layout_alignParentEnd="true"
+                                android:elevation="@dimen/margin_small"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginTop="@dimen/marginMedium2">
+
+
+                                <ImageView
+                                    android:id="@+id/image5"
+                                    android:layout_width="65dp"
+                                    android:layout_height="45dp"
+                                    android:src="@drawable/pizza"
+                                    android:layout_marginStart="@dimen/margin_small"
+                                    android:layout_marginLeft="@dimen/margin_small" />
+
+                                <TextView
+                                    android:id="@+id/image5Text"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Red Chillies"
+                                    android:layout_below="@+id/image5"
+                                    android:gravity="start"
+                                    android:textSize="@dimen/textSize_very_small" />
+
+
+
+                            </RelativeLayout>
+
+                            <!--image 6 layout-->
+                            <RelativeLayout
+                                android:id="@+id/image6Layout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:elevation="@dimen/margin_small"
+                                android:layout_alignParentBottom="true">
+
+                                <ImageView
+                                    android:id="@+id/image6"
+                                    android:layout_width="65dp"
+                                    android:layout_height="45dp"
+                                    android:src="@drawable/pizza"
+                                    android:layout_centerInParent="true"/>
+
+                                <TextView
+                                    android:id="@+id/image6Text"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/image6"
+                                    android:text="Red Onions"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="@dimen/margin_very_small"
+                                    android:textSize="@dimen/textSize_very_small"/>
+
+
+                            </RelativeLayout>
+
+                            <!--outer circle layout-->
+                            <RelativeLayout
+                                android:id="@+id/outerCircle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/circle_shape_desgn"
+                                android:gravity="center"
+                                android:layout_margin="@dimen/marginMedium1"
+                                android:layout_centerHorizontal="true">
+
+
+                                <RelativeLayout
+                                    android:id="@+id/categoryImageLayout"
+                                    android:layout_width="@dimen/custom_circle_size_260dp"
+                                    android:layout_height="@dimen/custom_circle_size_260dp"
+                                    android:orientation="vertical">
+
+
+                                    <ImageView
+                                        android:layout_width="220dp"
+                                        android:layout_height="220dp"
+                                        android:src="@drawable/pizza"
+                                        android:layout_centerInParent="true"/>
+                                </RelativeLayout>
+
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_below="@+id/frameLayout"
+                        android:layout_marginTop="@dimen/margin_small">
+
+                        <LinearLayout
+                            android:id="@+id/submitLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/marginMedium2"
+                            android:layout_marginTop="@dimen/margin_small"
+                            android:visibility="gone"
+                            android:background="@color/colorYellow">
+
+                            <TextView
+                                android:id="@+id/foodItemNameLabel"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="Chicken Pizza"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:textColor="@color/colorWhite"
+                                android:textStyle="bold"/>
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:weightSum="3">
+                            <android.support.v7.widget.RecyclerView
+                                android:id="@+id/selectedItemList"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                            </android.support.v7.widget.RecyclerView>
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+
+                </android.support.v4.widget.NestedScrollView>
+
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+
+</RelativeLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_extra_large">88dp</dimen>
+    <dimen name="margin_extra_very_large">152dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_medium">12dp</dimen>
+    <dimen name="margin_medium_16dp">16dp</dimen>
+    <dimen name="margin_medium_24dp">24dp</dimen>
+    <dimen name="margin_very_small">4dp</dimen>
+    <dimen name="custom_circle_size_260dp">260dp</dimen>
+    <dimen name="margin_extra_large_56sp">56dp</dimen>
+    <dimen name="margin_extra_large_64sp">64dp</dimen>
+    <dimen name="margin_extra_large_72dp">72dp</dimen>
+    <dimen name="margin_extra_large_88dp">88dp</dimen>
+    <dimen name="margin_large_48dp">48dp</dimen>
+    <dimen name="marginMedium1">20dp</dimen>
+    <dimen name="marginMedium2">40dp</dimen>
+    <dimen name="paddingSmall">8dp</dimen>
+    <dimen name="textSize_small">12sp</dimen>
+    <dimen name="textSize_very_small">10sp</dimen>
+    <dimen name="start_margin">-15dp</dimen>
+</resources>
