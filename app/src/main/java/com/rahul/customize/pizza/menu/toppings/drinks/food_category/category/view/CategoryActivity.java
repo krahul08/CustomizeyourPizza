@@ -1,19 +1,13 @@
 package com.rahul.customize.pizza.menu.toppings.drinks.food_category.category.view;
 
 import android.annotation.SuppressLint;
-import android.content.ClipData;
-import android.content.ClipDescription;
-import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.DragEvent;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -26,7 +20,6 @@ import com.app.dragable_views.OnViewSelection;
 import com.bumptech.glide.Glide;
 import com.rahul.customize.pizza.menu.toppings.drinks.R;
 import com.rahul.customize.pizza.menu.toppings.drinks.food_category.category.model.CategoryResponse;
-import com.rahul.customize.pizza.menu.toppings.drinks.food_category.category.model.SelectedItemData;
 import com.rahul.customize.pizza.menu.toppings.drinks.food_category.category.model.SubCategoryImageListData;
 import com.rahul.customize.pizza.menu.toppings.drinks.food_category.category.model.SubCategoryImageResponse;
 import com.rahul.customize.pizza.menu.toppings.drinks.food_category.category.model.SubCategoryResponse;
@@ -40,6 +33,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class CategoryActivity extends AppCompatActivity implements CategoryViews, RotationGestureDetector.OnRotationGestureListener, OnViewSelection {
 
@@ -61,8 +55,8 @@ public class CategoryActivity extends AppCompatActivity implements CategoryViews
     RelativeLayout outerMainLayout;
     @BindView(R.id.image1)
     ImageView image1;
-    @BindView(R.id.frameLayout)
-    FrameLayout frameLayout;
+    @BindView(R.id.relativeLayoutMain)
+    RelativeLayout relativeLayoutMain;
     @BindView(R.id.image1Text)
     TextView image1Text;
     @BindView(R.id.image1Layout)
@@ -111,9 +105,27 @@ public class CategoryActivity extends AppCompatActivity implements CategoryViews
     ProgressBar progressBar;
     @BindView(R.id.submitLayout)
     LinearLayout submitLayout;
+    @BindView(R.id.circleImage1)
+    CircleImageView circleImage1;
+    @BindView(R.id.circleImage2)
+    CircleImageView circleImage2;
+    @BindView(R.id.circleImage3)
+    CircleImageView circleImage3;
+    @BindView(R.id.circleImage4)
+    CircleImageView circleImage4;
+    @BindView(R.id.circleImage5)
+    CircleImageView circleImage5;
+    @BindView(R.id.circleImage6)
+    CircleImageView circleImage6;
+
+    @BindView(R.id.nestedView)
+    NestedScrollView nestedView;
+
+
     private SelectedItemListAdapter selectedItemListAdapter;
     private FoodCategoryListAdapter categoryListAdapter;
     private SubCategoryListAdapter subCategoryListAdapter;
+    private SubCategoryImageResponse subCategoryImageResponse;
     private CategoryPresenter categoryPresenter;
     private int categoryId;
     private RotationGestureDetector mRotationDetector;
@@ -128,7 +140,7 @@ public class CategoryActivity extends AppCompatActivity implements CategoryViews
         ButterKnife.bind(this);
         categoryPresenter = new CategoryPresenterImpl(this, new CategoryProviderImpl());
         categoryPresenter.getCategoryList();
-        mRotationDetector = new RotationGestureDetector(this, outerMainLayout);
+        mRotationDetector = new RotationGestureDetector(this, categoryImageLayout);
 
 
 //
@@ -147,7 +159,7 @@ public class CategoryActivity extends AppCompatActivity implements CategoryViews
 
     private void implementEvents() {
 
-        DraggableViewMain draggableViewMain = new DraggableViewMain(this, outerCircle);
+        DraggableViewMain draggableViewMain = new DraggableViewMain(this, relativeLayoutMain);
 
 
         draggableViewMain.addView(image1Layout);
@@ -156,6 +168,7 @@ public class CategoryActivity extends AppCompatActivity implements CategoryViews
         draggableViewMain.addView(image4Layout);
         draggableViewMain.addView(image5Layout);
         draggableViewMain.addView(image6Layout);
+
 
 //        image1Layout.setOnLongClickListener(this);
 //        image2Layout.setOnLongClickListener(this);
@@ -269,7 +282,7 @@ public class CategoryActivity extends AppCompatActivity implements CategoryViews
         try {
             mRotationDetector.onTouchEvent(event);
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.getMessage();
         }
         return super.onTouchEvent(event);
@@ -278,9 +291,9 @@ public class CategoryActivity extends AppCompatActivity implements CategoryViews
 
     @Override
     public void showProgress(boolean show) {
-        if (show){
+        if (show) {
             progressBar.setVisibility(View.VISIBLE);
-        }else {
+        } else {
             progressBar.setVisibility(View.GONE);
 
         }
@@ -290,15 +303,15 @@ public class CategoryActivity extends AppCompatActivity implements CategoryViews
     public void getFoodCategory(CategoryResponse categoryResponse) {
         if (categoryResponse.isSuccess()) {
 
-            if (categoryResponse.getCategory_list().size()!=0){
+            if (categoryResponse.getCategory_list().size() != 0) {
 
-            categoryListAdapter = new FoodCategoryListAdapter(this, this);
-            categoryListAdapter.setData(categoryResponse.getCategory_list());
-            categoryList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true));
-            categoryList.setAdapter(categoryListAdapter);
-            categoryList.setHasFixedSize(true);
-            categoryListAdapter.notifyDataSetChanged();
-        }else {
+                categoryListAdapter = new FoodCategoryListAdapter(this, this);
+                categoryListAdapter.setData(categoryResponse.getCategory_list());
+                categoryList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true));
+                categoryList.setAdapter(categoryListAdapter);
+                categoryList.setHasFixedSize(true);
+                categoryListAdapter.notifyDataSetChanged();
+            } else {
                 foodItemLabelLayout.setVisibility(View.GONE);
                 outerMainLayout.setVisibility(View.GONE);
                 submitLayout.setVisibility(View.GONE);
@@ -310,14 +323,14 @@ public class CategoryActivity extends AppCompatActivity implements CategoryViews
     public void getSubCategory(SubCategoryResponse subCategoryResponse) {
         if (subCategoryResponse.isSuccess()) {
             subCategoryList.setVisibility(View.VISIBLE);
-            if (subCategoryResponse.getSub_category_list().size()!=0){
-            subCategoryListAdapter = new SubCategoryListAdapter(this, this);
-            subCategoryListAdapter.setData(subCategoryResponse.getSub_category_list());
-            subCategoryList.setLayoutManager(new LinearLayoutManager(this));
-            subCategoryList.setAdapter(subCategoryListAdapter);
-            subCategoryList.setHasFixedSize(true);
-            subCategoryListAdapter.notifyDataSetChanged();
-        }else {
+            if (subCategoryResponse.getSub_category_list().size() != 0) {
+                subCategoryListAdapter = new SubCategoryListAdapter(this, this);
+                subCategoryListAdapter.setData(subCategoryResponse.getSub_category_list());
+                subCategoryList.setLayoutManager(new LinearLayoutManager(this));
+                subCategoryList.setAdapter(subCategoryListAdapter);
+                subCategoryList.setHasFixedSize(true);
+                subCategoryListAdapter.notifyDataSetChanged();
+            } else {
                 foodItemLabelLayout.setVisibility(View.GONE);
                 outerMainLayout.setVisibility(View.GONE);
                 submitLayout.setVisibility(View.GONE);
@@ -326,12 +339,13 @@ public class CategoryActivity extends AppCompatActivity implements CategoryViews
 
         }
     }
+
     @Override
     public void getSubCategoryImages(SubCategoryImageResponse subCategoryImageResponse) {
         if (subCategoryImageResponse.isSuccess()) {
             this.imageListData = subCategoryImageResponse.getSub_category_image_list();
 
-            if (subCategoryImageResponse.getSub_category_image_list().size()!=0){
+            if (subCategoryImageResponse.getSub_category_image_list().size() != 0) {
 
                 foodItemLabelLayout.setVisibility(View.VISIBLE);
                 outerMainLayout.setVisibility(View.VISIBLE);
@@ -356,7 +370,7 @@ public class CategoryActivity extends AppCompatActivity implements CategoryViews
                 image4Text.setText(subCategoryImageResponse.getSub_category_image_list().get(3).getImage_name());
                 image5Text.setText(subCategoryImageResponse.getSub_category_image_list().get(4).getImage_name());
                 image6Text.setText(subCategoryImageResponse.getSub_category_image_list().get(5).getImage_name());
-            }else {
+            } else {
 
                 foodItemLabelLayout.setVisibility(View.GONE);
                 outerMainLayout.setVisibility(View.GONE);
@@ -364,6 +378,7 @@ public class CategoryActivity extends AppCompatActivity implements CategoryViews
             }
         }
     }
+
     @Override
     public void showError(String errorMessage) {
         Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT).show();
@@ -382,7 +397,7 @@ public class CategoryActivity extends AppCompatActivity implements CategoryViews
     public void onRotation(RotationGestureDetector rotationDetector) {
         float angle = rotationDetector.getAngle();
         outerMainLayout.setRotation(angle);
-        pizzaImage.setRotation(360-angle);
+        pizzaImage.setRotation(360 - angle);
 
 
     }
@@ -390,20 +405,71 @@ public class CategoryActivity extends AppCompatActivity implements CategoryViews
     @Override
     public int viewSelectedPosition(int position) {
 
-        itemsArrayList.add(imageListData.get(position).getImage_name());
-        //selectedItemData.setItemName(imageListData.get(position).getImage_name());
 
-        selectedItemListAdapter = new SelectedItemListAdapter(this);
-        selectedItemListAdapter.setData(itemsArrayList);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        selectedItemList.setLayoutManager(layoutManager);
-        selectedItemList.setHasFixedSize(true);
-        selectedItemList.setAdapter(selectedItemListAdapter);
-        selectedItemListAdapter.notifyDataSetChanged();
-        selectedItemList.setNestedScrollingEnabled(false);
+        if (position==0){
+//            circleImage1.setVisibility(View.VISIBLE);
+           Glide.with(this).load(imageListData.get(0).getSub_category_image()).into(circleImage1);
+        }else {
+//            circleImage1.setVisibility(View.GONE);
 
+        }
+        if (position==1){
+//            circleImage2.setVisibility(View.VISIBLE);
+            Glide.with(this).load(imageListData.get(1).getSub_category_image()).into(circleImage2);
+        }else {
+//            circleImage2.setVisibility(View.GONE);
+        }
 
+        if (position==2){
+
+//            circleImage3.setVisibility(View.VISIBLE);
+            Glide.with(this).load(imageListData.get(2).getSub_category_image()).into(circleImage3);
+//        }else {
+            circleImage3.setVisibility(View.GONE);
+        }
+
+        if (position==3){
+
+//            circleImage4.setVisibility(View.VISIBLE);
+            Glide.with(this).load(imageListData.get(3).getSub_category_image()).into(circleImage4);
+        }else {
+//            circleImage4.setVisibility(View.GONE);
+        }
+
+        if (position==4){
+
+//            circleImage5.setVisibility(View.VISIBLE);
+            Glide.with(this).load(imageListData.get(4).getSub_category_image()).into(circleImage5);
+        }else {
+//            circleImage5.setVisibility(View.GONE);
+        }
+
+        if (position==5){
+//            circleImage6.setVisibility(View.VISIBLE);
+            Glide.with(this).load(imageListData.get(5).getSub_category_image()).into(circleImage6);
+        }else {
+//            circleImage6.setVisibility(View.GONE);
+        }
+
+        try {
+            itemsArrayList.add(imageListData.get(position).getImage_name());
+            //selectedItemData.setItemName(imageListData.get(position).getImage_name());
+
+            selectedItemListAdapter = new SelectedItemListAdapter(this);
+            selectedItemListAdapter.setData(itemsArrayList);
+            LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+            selectedItemList.setLayoutManager(layoutManager);
+            selectedItemList.setHasFixedSize(true);
+            selectedItemList.setAdapter(selectedItemListAdapter);
+            selectedItemListAdapter.notifyDataSetChanged();
+            selectedItemList.setNestedScrollingEnabled(false);
+
+        } catch (Exception e) {
+            e.getMessage();
+        }
 
         return position;
     }
+
+
 }

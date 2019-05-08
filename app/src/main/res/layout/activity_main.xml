@@ -106,13 +106,13 @@
                             android:layout_marginLeft="@dimen/margin_small" />
                     </LinearLayout>
 
-                    <FrameLayout
+                    <RelativeLayout
                         xmlns:android="http://schemas.android.com/apk/res/android"
                         xmlns:tools="http://schemas.android.com/tools"
                         android:layout_width="match_parent"
                         android:layout_height="300dp"
                         android:layout_gravity="center"
-                        android:id="@+id/frameLayout"
+                        android:id="@+id/relativeLayoutMain"
                         android:layout_below="@+id/foodItemLabelLayout"
                         android:layout_marginTop="@dimen/margin_small">
 
@@ -120,7 +120,7 @@
                             android:id="@+id/outerMainLayout"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:visibility="visible">
+                            android:visibility="gone">
 
                             <!--image 1 layout-->
                             <RelativeLayout
@@ -128,6 +128,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:elevation="@dimen/margin_small"
+                                android:gravity="center"
                                 android:layout_marginStart="@dimen/margin_small"
                                 android:layout_marginTop="@dimen/margin_extra_large_64sp"
                                 android:layout_marginLeft="@dimen/margin_small">
@@ -136,7 +137,8 @@
                                     android:id="@+id/image1"
                                     android:layout_width="65dp"
                                     android:layout_height="45dp"
-                                    android:src="@drawable/pizza" />
+                                    android:src="@drawable/pizza"
+                                    android:layout_centerHorizontal="true"/>
 
                                 <TextView
                                     android:id="@+id/image1Text"
@@ -243,6 +245,7 @@
                                     android:layout_height="wrap_content"
                                     android:gravity="center"
                                     android:text="Mushroom"
+                                    android:layout_centerHorizontal="true"
                                     android:textSize="@dimen/textSize_very_small"
                                     android:layout_marginStart="@dimen/margin_very_small"
                                     android:layout_below="@+id/image4"
@@ -261,6 +264,7 @@
                                 android:layout_alignParentEnd="true"
                                 android:elevation="@dimen/margin_small"
                                 android:layout_alignParentRight="true"
+                                android:gravity="center"
                                 android:layout_marginTop="@dimen/marginMedium2">
 
 
@@ -269,6 +273,7 @@
                                     android:layout_width="65dp"
                                     android:layout_height="45dp"
                                     android:src="@drawable/pizza"
+                                    android:layout_centerInParent="true"
                                     android:layout_marginStart="@dimen/margin_small"
                                     android:layout_marginLeft="@dimen/margin_small" />
 
@@ -279,6 +284,8 @@
                                     android:text="Red Chillies"
                                     android:layout_below="@+id/image5"
                                     android:gravity="start"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="@dimen/margin_very_small"
                                     android:textSize="@dimen/textSize_very_small" />
 
 
@@ -291,6 +298,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerHorizontal="true"
+                                android:gravity="center"
                                 android:elevation="@dimen/margin_small"
                                 android:layout_alignParentBottom="true">
 
@@ -331,7 +339,69 @@
                                     android:layout_height="@dimen/custom_circle_size_260dp"
                                     android:orientation="vertical">
 
+                                    <RelativeLayout
+                                        android:layout_width="150dp"
+                                        android:layout_height="150dp"
+                                        android:gravity="center"
+                                        android:layout_centerInParent="true"
+                                        android:elevation="@dimen/margin_medium_16dp">
 
+                                        <RelativeLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="center">
+
+                                            <de.hdodenhof.circleimageview.CircleImageView
+                                                android:id="@+id/circleImage1"
+                                                android:layout_width="35dp"
+                                                android:layout_height="35dp"
+                                                android:visibility="visible"/>
+
+                                            <de.hdodenhof.circleimageview.CircleImageView
+                                                android:id="@+id/circleImage2"
+                                                android:layout_width="35dp"
+                                                android:layout_height="35dp"
+                                                android:layout_toEndOf="@+id/circleImage1"
+                                                android:layout_toRightOf="@+id/circleImage1"
+                                                android:visibility="visible"/>
+
+                                            <de.hdodenhof.circleimageview.CircleImageView
+                                                android:id="@+id/circleImage3"
+                                                android:layout_width="35dp"
+                                                android:layout_height="35dp"
+                                                android:layout_toEndOf="@+id/circleImage2"
+                                                android:visibility="visible"
+                                                android:layout_toRightOf="@+id/circleImage2"/>
+
+                                            <de.hdodenhof.circleimageview.CircleImageView
+                                                android:id="@+id/circleImage4"
+                                                android:layout_width="35dp"
+                                                android:layout_height="35dp"
+                                                android:layout_below="@+id/circleImage1"
+                                                android:visibility="visible"/>
+
+                                            <de.hdodenhof.circleimageview.CircleImageView
+                                                android:id="@+id/circleImage5"
+                                                android:layout_width="35dp"
+                                                android:layout_height="35dp"
+                                                android:visibility="visible"
+                                                android:layout_below="@+id/circleImage2"
+                                                android:layout_toEndOf="@+id/circleImage4"
+                                                android:layout_toRightOf="@+id/circleImage4" />
+
+                                            <de.hdodenhof.circleimageview.CircleImageView
+                                                android:id="@+id/circleImage6"
+                                                android:layout_width="35dp"
+                                                android:layout_height="35dp"
+                                                android:visibility="visible"
+                                                android:layout_below="@+id/circleImage3"
+                                                android:layout_toEndOf="@+id/circleImage5"
+                                                android:layout_toRightOf="@+id/circleImage5"/>
+
+
+                                        </RelativeLayout>
+
+                                    </RelativeLayout>
                                     <ImageView
                                         android:id="@+id/pizzaImage"
                                         android:layout_width="220dp"
@@ -345,13 +415,13 @@
 
                         </RelativeLayout>
 
-                    </FrameLayout>
+                    </RelativeLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:layout_below="@+id/frameLayout"
+                        android:layout_below="@+id/relativeLayoutMain"
                         android:layout_marginTop="@dimen/margin_small">
 
                         <LinearLayout
