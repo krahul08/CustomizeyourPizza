@@ -98,12 +98,12 @@ public class RotationGestureDetector {
 
     private float angleBetweenLines(PointF fPoint, PointF sPoint, PointF nFpoint, PointF nSpoint)
     {
-        float angle1 = (float) Math.atan2((fPoint.y - sPoint.y), (fPoint.x - sPoint.x));
-        float angle2 = (float) Math.atan2((nFpoint.y - nSpoint.y), (nFpoint.x - nSpoint.x));
+        float angle1 = (float) Math.atan2((fPoint.x - sPoint.y), (fPoint.x - sPoint.x));
+        float angle2 = (float) Math.atan2((nFpoint.x - nSpoint.y), (nFpoint.x - nSpoint.x));
 
         float angle = ((float) Math.toDegrees(angle1 - angle2)) % 360;
-        if (angle < -180.f) angle += 360.0f;
-        if (angle > 180.f) angle -= 360.0f;
+//        if (angle < -180.f) angle += 360.0f;
+//        if (angle > 180.f) angle -= 360.0f;
         return -angle;
     }
 

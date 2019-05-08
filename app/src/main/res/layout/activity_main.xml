@@ -120,7 +120,7 @@
                             android:id="@+id/outerMainLayout"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:visibility="gone">
+                            android:visibility="visible">
 
                             <!--image 1 layout-->
                             <RelativeLayout
@@ -333,6 +333,7 @@
 
 
                                     <ImageView
+                                        android:id="@+id/pizzaImage"
                                         android:layout_width="220dp"
                                         android:layout_height="220dp"
                                         android:src="@drawable/pizza"

@@ -51,8 +51,8 @@ public class CategoryActivity extends AppCompatActivity implements CategoryViews
 //    TextView subCategoryName;
 //    @BindView(R.id.back)
 //    TextView back;
-//    @BindView(R.id.categoryImage)
-//    ImageView categoryImage;
+    @BindView(R.id.pizzaImage)
+    ImageView pizzaImage;
     @BindView(R.id.categoryImageLayout)
     RelativeLayout categoryImageLayout;
     @BindView(R.id.outerCircle)
@@ -381,7 +381,10 @@ public class CategoryActivity extends AppCompatActivity implements CategoryViews
     @Override
     public void onRotation(RotationGestureDetector rotationDetector) {
         float angle = rotationDetector.getAngle();
-        outerMainLayout.setRotation(outerMainLayout.getRotation() - angle);
+        outerMainLayout.setRotation(angle);
+        pizzaImage.setRotation(360-angle);
+
+
     }
 
     @Override
