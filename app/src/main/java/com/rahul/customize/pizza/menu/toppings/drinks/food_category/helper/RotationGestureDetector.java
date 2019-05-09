@@ -82,8 +82,8 @@ public class RotationGestureDetector {
         final int[] location = { 0, 0 };
         mView.getLocationOnScreen(location);
 
-        float x = ev.getX(index);
-        float y = ev.getY(index);
+        float y = ev.getX(index);
+        float x = ev.getY(index);
 
         double angle = Math.toDegrees(Math.atan2(x, y));
         angle += mView.getRotation();
