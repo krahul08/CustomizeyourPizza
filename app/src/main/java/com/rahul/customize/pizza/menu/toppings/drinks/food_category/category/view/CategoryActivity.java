@@ -33,7 +33,6 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class CategoryActivity extends AppCompatActivity implements CategoryViews, RotationGestureDetector.OnRotationGestureListener, OnViewSelection {
 
@@ -105,21 +104,64 @@ public class CategoryActivity extends AppCompatActivity implements CategoryViews
     ProgressBar progressBar;
     @BindView(R.id.submitLayout)
     LinearLayout submitLayout;
-    @BindView(R.id.circleImage1)
-    CircleImageView circleImage1;
-    @BindView(R.id.circleImage2)
-    CircleImageView circleImage2;
-    @BindView(R.id.circleImage3)
-    CircleImageView circleImage3;
-    @BindView(R.id.circleImage4)
-    CircleImageView circleImage4;
-    @BindView(R.id.circleImage5)
-    CircleImageView circleImage5;
-    @BindView(R.id.circleImage6)
-    CircleImageView circleImage6;
+    @BindView(R.id.innerCircleLayout)
+    LinearLayout innerCircleLayout;
+//    @BindView(R.id.circleImage1)
+//    CircleImageView circleImage1;
+//    @BindView(R.id.circleImage2)
+//    CircleImageView circleImage2;
+//    @BindView(R.id.circleImage3)
+//    CircleImageView circleImage3;
+//    @BindView(R.id.circleImage4)
+//    CircleImageView circleImage4;
+//    @BindView(R.id.circleImage5)
+//    CircleImageView circleImage5;
+//    @BindView(R.id.circleImage6)
+//    CircleImageView circleImage6;
 
     @BindView(R.id.nestedView)
     NestedScrollView nestedView;
+    @BindView(R.id.leftImage1)
+    ImageView leftImage1;
+    @BindView(R.id.leftImage2)
+    ImageView leftImage2;
+    @BindView(R.id.leftImage4)
+    ImageView leftImage4;
+    @BindView(R.id.leftImage5)
+    ImageView leftImage5;
+    @BindView(R.id.leftImage6)
+    ImageView leftImage6;
+    @BindView(R.id.leftImage7)
+    ImageView leftImage7;
+    @BindView(R.id.leftImage8)
+    ImageView leftImage8;
+    @BindView(R.id.leftImage9)
+    ImageView leftImage9;
+    @BindView(R.id.rightImage1)
+    ImageView rightImage1;
+    @BindView(R.id.rightImage2)
+    ImageView rightImage2;
+    @BindView(R.id.rightImage3)
+    ImageView rightImage3;
+    @BindView(R.id.rightImage5)
+    ImageView rightImage5;
+    @BindView(R.id.rightImage6)
+    ImageView rightImage6;
+    @BindView(R.id.rightImage7)
+    ImageView rightImage7;
+    @BindView(R.id.rightImage8)
+    ImageView rightImage8;
+    @BindView(R.id.rightImage9)
+    ImageView rightImage9;
+    @BindView(R.id.rightImage10)
+    ImageView rightImage10;
+    @BindView(R.id.rightImage11)
+    ImageView rightImage11;
+    @BindView(R.id.innerLeftLayout)
+    RelativeLayout innerLeftLayout;
+    @BindView(R.id.innerRightLayout)
+    RelativeLayout innerRightLayout;
+
 
 
     private SelectedItemListAdapter selectedItemListAdapter;
@@ -398,7 +440,7 @@ public class CategoryActivity extends AppCompatActivity implements CategoryViews
         float angle = rotationDetector.getAngle();
         outerMainLayout.setRotation(angle);
         pizzaImage.setRotation(360 - angle);
-
+        innerCircleLayout.setRotation(360 - angle);
 
     }
 
@@ -406,48 +448,76 @@ public class CategoryActivity extends AppCompatActivity implements CategoryViews
     public int viewSelectedPosition(int position) {
 
 
-        if (position==0){
+        if (position == 0) {
 //            circleImage1.setVisibility(View.VISIBLE);
-           Glide.with(this).load(imageListData.get(0).getSub_category_image()).into(circleImage1);
-        }else {
+            innerLeftLayout.setBackground(getResources().getDrawable(R.drawable.left_half_circle_design));
+            Glide.with(this).load(imageListData.get(0).getSub_category_image()).into(leftImage1);
+            Glide.with(this).load(imageListData.get(0).getSub_category_image()).into(leftImage2);
+            Glide.with(this).load(imageListData.get(0).getSub_category_image()).into(leftImage7);
+            Glide.with(this).load(imageListData.get(0).getSub_category_image()).into(leftImage4);
+        } else {
 //            circleImage1.setVisibility(View.GONE);
 
         }
-        if (position==1){
+        if (position == 1) {
 //            circleImage2.setVisibility(View.VISIBLE);
-            Glide.with(this).load(imageListData.get(1).getSub_category_image()).into(circleImage2);
-        }else {
+            innerLeftLayout.setBackground(getResources().getDrawable(R.drawable.left_half_circle_design));
+
+            Glide.with(this).load(imageListData.get(1).getSub_category_image()).into(leftImage5);
+            Glide.with(this).load(imageListData.get(1).getSub_category_image()).into(leftImage6);
+            Glide.with(this).load(imageListData.get(1).getSub_category_image()).into(leftImage7);
+            Glide.with(this).load(imageListData.get(1).getSub_category_image()).into(leftImage8);
+        } else {
 //            circleImage2.setVisibility(View.GONE);
         }
 
-        if (position==2){
+        if (position == 2) {
+            innerRightLayout.setBackground(getResources().getDrawable(R.drawable.right_half_circle_design));
 
 //            circleImage3.setVisibility(View.VISIBLE);
-            Glide.with(this).load(imageListData.get(2).getSub_category_image()).into(circleImage3);
+            Glide.with(this).load(imageListData.get(2).getSub_category_image()).into(rightImage1);
+            Glide.with(this).load(imageListData.get(2).getSub_category_image()).into(rightImage2);
+            Glide.with(this).load(imageListData.get(2).getSub_category_image()).into(rightImage9);
+            Glide.with(this).load(imageListData.get(2).getSub_category_image()).into(rightImage5);
 //        }else {
-            circleImage3.setVisibility(View.GONE);
+//            circleImage3.setVisibility(View.GONE);
         }
 
-        if (position==3){
+        if (position == 3) {
+            innerRightLayout.setBackground(getResources().getDrawable(R.drawable.right_half_circle_design));
 
 //            circleImage4.setVisibility(View.VISIBLE);
-            Glide.with(this).load(imageListData.get(3).getSub_category_image()).into(circleImage4);
-        }else {
+            Glide.with(this).load(imageListData.get(3).getSub_category_image()).into(rightImage6);
+            Glide.with(this).load(imageListData.get(3).getSub_category_image()).into(rightImage7);
+            Glide.with(this).load(imageListData.get(3).getSub_category_image()).into(rightImage8);
+            Glide.with(this).load(imageListData.get(3).getSub_category_image()).into(rightImage9);
+        } else {
 //            circleImage4.setVisibility(View.GONE);
         }
 
-        if (position==4){
+        if (position == 4) {
 
 //            circleImage5.setVisibility(View.VISIBLE);
-            Glide.with(this).load(imageListData.get(4).getSub_category_image()).into(circleImage5);
-        }else {
+            innerRightLayout.setBackground(getResources().getDrawable(R.drawable.right_half_circle_design));
+
+            Glide.with(this).load(imageListData.get(4).getSub_category_image()).into(rightImage10);
+            Glide.with(this).load(imageListData.get(4).getSub_category_image()).into(rightImage11);
+            Glide.with(this).load(imageListData.get(4).getSub_category_image()).into(rightImage1);
+            Glide.with(this).load(imageListData.get(4).getSub_category_image()).into(rightImage2);
+            Glide.with(this).load(imageListData.get(4).getSub_category_image()).into(rightImage7);
+        } else {
 //            circleImage5.setVisibility(View.GONE);
         }
 
-        if (position==5){
+        if (position == 5) {
 //            circleImage6.setVisibility(View.VISIBLE);
-            Glide.with(this).load(imageListData.get(5).getSub_category_image()).into(circleImage6);
-        }else {
+            innerLeftLayout.setBackground(getResources().getDrawable(R.drawable.left_half_circle_design));
+            Glide.with(this).load(imageListData.get(5).getSub_category_image()).into(leftImage7);
+            Glide.with(this).load(imageListData.get(5).getSub_category_image()).into(leftImage2);
+            Glide.with(this).load(imageListData.get(5).getSub_category_image()).into(leftImage1);
+            Glide.with(this).load(imageListData.get(5).getSub_category_image()).into(leftImage5);
+            Glide.with(this).load(imageListData.get(5).getSub_category_image()).into(leftImage9);
+        } else {
 //            circleImage6.setVisibility(View.GONE);
         }
 

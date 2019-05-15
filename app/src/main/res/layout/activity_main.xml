@@ -120,7 +120,7 @@
                             android:id="@+id/outerMainLayout"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:visibility="gone">
+                            android:visibility="visible">
 
                             <!--image 1 layout-->
                             <RelativeLayout
@@ -339,75 +339,258 @@
                                     android:layout_height="@dimen/custom_circle_size_260dp"
                                     android:orientation="vertical">
 
-                                    <RelativeLayout
-                                        android:layout_width="150dp"
-                                        android:layout_height="150dp"
-                                        android:gravity="center"
+                                    <LinearLayout
+                                        android:id="@+id/innerCircleLayout"
+                                        android:layout_width="180dp"
+                                        android:layout_height="183dp"
                                         android:layout_centerInParent="true"
-                                        android:elevation="@dimen/margin_medium_16dp">
+                                        android:elevation="@dimen/margin_medium_16dp"
+                                        android:gravity="center"
+                                        android:orientation="horizontal"
+                                        android:weightSum="1">
 
                                         <RelativeLayout
-                                            android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            android:gravity="center">
+                                            android:id="@+id/innerLeftLayout"
+                                            android:layout_width="0sp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight=".5">
 
-                                            <de.hdodenhof.circleimageview.CircleImageView
-                                                android:id="@+id/circleImage1"
-                                                android:layout_width="35dp"
-                                                android:layout_height="35dp"
-                                                android:visibility="visible"/>
+                                            <ImageView
+                                                android:id="@+id/leftImage1"
+                                                android:layout_width="32dp"
+                                                android:layout_height="20dp"
+                                                android:layout_centerInParent="true"/>
 
-                                            <de.hdodenhof.circleimageview.CircleImageView
-                                                android:id="@+id/circleImage2"
-                                                android:layout_width="35dp"
-                                                android:layout_height="35dp"
-                                                android:layout_toEndOf="@+id/circleImage1"
-                                                android:layout_toRightOf="@+id/circleImage1"
-                                                android:visibility="visible"/>
+                                            <ImageView
+                                                android:id="@+id/leftImage2"
+                                                android:layout_width="32dp"
+                                                android:layout_height="20dp"
+                                                android:layout_marginTop="@dimen/paddingSmall"
+                                                android:layout_below="@+id/leftImage1"
+                                                android:layout_centerInParent="true"/>
 
-                                            <de.hdodenhof.circleimageview.CircleImageView
-                                                android:id="@+id/circleImage3"
-                                                android:layout_width="35dp"
-                                                android:layout_height="35dp"
-                                                android:layout_toEndOf="@+id/circleImage2"
-                                                android:visibility="visible"
-                                                android:layout_toRightOf="@+id/circleImage2"/>
 
-                                            <de.hdodenhof.circleimageview.CircleImageView
-                                                android:id="@+id/circleImage4"
-                                                android:layout_width="35dp"
-                                                android:layout_height="35dp"
-                                                android:layout_below="@+id/circleImage1"
-                                                android:visibility="visible"/>
+                                            <ImageView
+                                                android:id="@+id/leftImage4"
+                                                android:layout_width="32dp"
+                                                android:layout_height="20dp"
+                                                android:layout_marginTop="@dimen/paddingSmall"
+                                                android:layout_above="@+id/leftImage1"
+                                                android:layout_marginBottom="@dimen/paddingSmall"
+                                                android:layout_centerInParent="true"/>
 
-                                            <de.hdodenhof.circleimageview.CircleImageView
-                                                android:id="@+id/circleImage5"
-                                                android:layout_width="35dp"
-                                                android:layout_height="35dp"
-                                                android:visibility="visible"
-                                                android:layout_below="@+id/circleImage2"
-                                                android:layout_toEndOf="@+id/circleImage4"
-                                                android:layout_toRightOf="@+id/circleImage4" />
 
-                                            <de.hdodenhof.circleimageview.CircleImageView
-                                                android:id="@+id/circleImage6"
-                                                android:layout_width="35dp"
-                                                android:layout_height="35dp"
-                                                android:visibility="visible"
-                                                android:layout_below="@+id/circleImage3"
-                                                android:layout_toEndOf="@+id/circleImage5"
-                                                android:layout_toRightOf="@+id/circleImage5"/>
+                                            <ImageView
+                                                android:id="@+id/leftImage5"
+                                                android:layout_width="32dp"
+                                                android:layout_height="20dp"
+                                                android:layout_centerInParent="true"
+                                                android:layout_alignParentEnd="true"
+                                                android:layout_alignParentRight="true" />
+
+
+                                            <ImageView
+                                                android:id="@+id/leftImage6"
+                                                android:layout_width="32dp"
+                                                android:layout_height="20dp"
+                                                android:layout_centerInParent="true"
+                                                android:layout_alignParentEnd="true"
+                                                android:layout_alignParentRight="true"
+                                                android:layout_below="@+id/leftImage5"/>
+
+
+                                            <ImageView
+                                                android:id="@+id/leftImage7"
+                                                android:layout_width="32dp"
+                                                android:layout_height="20dp"
+                                                android:layout_centerInParent="true"
+                                                android:layout_alignParentEnd="true"
+                                                android:layout_alignParentRight="true"
+                                                android:layout_below="@+id/leftImage6"/>
+
+
+                                            <ImageView
+                                                android:id="@+id/leftImage8"
+                                                android:layout_width="32dp"
+                                                android:layout_height="20dp"
+                                                android:layout_centerInParent="true"
+                                                android:layout_alignParentEnd="true"
+                                                android:layout_alignParentRight="true"
+                                                android:layout_above="@+id/leftImage5"/>
+
+
+                                            <ImageView
+                                                android:id="@+id/leftImage9"
+                                                android:layout_width="32dp"
+                                                android:layout_height="20dp"
+                                                android:layout_centerInParent="true"
+                                                android:layout_alignParentEnd="true"
+                                                android:layout_alignParentRight="true"
+                                                android:layout_above="@+id/leftImage8"/>
 
 
                                         </RelativeLayout>
 
-                                    </RelativeLayout>
+                                        <RelativeLayout
+                                            android:id="@+id/innerRightLayout"
+                                            android:layout_width="0sp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight=".5"
+                                            >
+
+
+                                            <ImageView
+                                                android:id="@+id/rightImage1"
+                                                android:layout_width="32dp"
+                                                android:layout_height="20dp"
+                                                android:layout_centerVertical="true"/>
+
+                                            <ImageView
+                                                android:id="@+id/rightImage2"
+                                                android:layout_width="32dp"
+                                                android:layout_height="20dp"
+                                                android:layout_below="@+id/rightImage1"
+                                                android:layout_centerVertical="true"/>
+
+
+                                            <ImageView
+                                                android:id="@+id/rightImage3"
+                                                android:layout_width="32dp"
+                                                android:layout_height="20dp"
+                                                android:layout_below="@+id/rightImage2"
+                                                android:layout_centerVertical="true"/>
+
+
+                                            <ImageView
+                                                android:id="@+id/rightImage5"
+                                                android:layout_width="32dp"
+                                                android:layout_height="20dp"
+                                                android:layout_above="@+id/rightImage1"
+                                                android:layout_centerVertical="true"/>
+
+
+                                            <ImageView
+                                                android:id="@+id/rightImage6"
+                                                android:layout_width="32dp"
+                                                android:layout_height="20dp"
+                                                android:layout_above="@+id/rightImage5"
+                                                android:layout_centerVertical="true"/>
+
+
+                                            <ImageView
+                                                android:id="@+id/rightImage7"
+                                                android:layout_width="32dp"
+                                                android:layout_height="20dp"
+                                                android:layout_toRightOf="@+id/rightImage1"
+                                                android:layout_centerVertical="true"
+                                                android:layout_toEndOf="@+id/rightImage1" />
+
+                                            <ImageView
+                                                android:id="@+id/rightImage8"
+                                                android:layout_width="32dp"
+                                                android:layout_height="20dp"
+                                                android:layout_toRightOf="@+id/rightImage2"
+                                                android:layout_centerVertical="true"
+                                                android:layout_toEndOf="@+id/rightImage2"
+                                                android:layout_above="@+id/rightImage7"/>
+
+
+                                            <ImageView
+                                                android:id="@+id/rightImage9"
+                                                android:layout_width="32dp"
+                                                android:layout_height="20dp"
+                                                android:layout_toRightOf="@+id/rightImage2"
+                                                android:layout_centerVertical="true"
+                                                android:layout_toEndOf="@+id/rightImage2"
+                                                android:layout_above="@+id/rightImage8"/>
+
+
+                                            <ImageView
+                                                android:id="@+id/rightImage10"
+                                                android:layout_width="32dp"
+                                                android:layout_height="20dp"
+                                                android:layout_toRightOf="@+id/rightImage2"
+                                                android:layout_centerVertical="true"
+                                                android:layout_toEndOf="@+id/rightImage2"
+                                                android:layout_below="@+id/rightImage7"/>
+
+
+                                            <ImageView
+                                                android:id="@+id/rightImage11"
+                                                android:layout_width="32dp"
+                                                android:layout_height="20dp"
+                                                android:layout_toRightOf="@+id/rightImage2"
+                                                android:layout_centerVertical="true"
+                                                android:layout_toEndOf="@+id/rightImage2"
+                                                android:layout_below="@+id/rightImage10"/>
+
+
+                                        </RelativeLayout>
+
+
+                                        <!--<RelativeLayout-->
+                                        <!--android:layout_width="match_parent"-->
+                                        <!--android:layout_height="wrap_content"-->
+                                        <!--android:gravity="center">-->
+
+                                        <!--<de.hdodenhof.circleimageview.CircleImageView-->
+                                        <!--android:id="@+id/circleImage1"-->
+                                        <!--android:layout_width="35dp"-->
+                                        <!--android:layout_height="35dp"-->
+                                        <!--android:visibility="visible"/>-->
+
+                                        <!--<de.hdodenhof.circleimageview.CircleImageView-->
+                                        <!--android:id="@+id/circleImage2"-->
+                                        <!--android:layout_width="35dp"-->
+                                        <!--android:layout_height="35dp"-->
+                                        <!--android:layout_toEndOf="@+id/circleImage1"-->
+                                        <!--android:layout_toRightOf="@+id/circleImage1"-->
+                                        <!--android:visibility="visible"/>-->
+
+                                        <!--<de.hdodenhof.circleimageview.CircleImageView-->
+                                        <!--android:id="@+id/circleImage3"-->
+                                        <!--android:layout_width="35dp"-->
+                                        <!--android:layout_height="35dp"-->
+                                        <!--android:layout_toEndOf="@+id/circleImage2"-->
+                                        <!--android:visibility="visible"-->
+                                        <!--android:layout_toRightOf="@+id/circleImage2"/>-->
+
+                                        <!--<de.hdodenhof.circleimageview.CircleImageView-->
+                                        <!--android:id="@+id/circleImage4"-->
+                                        <!--android:layout_width="35dp"-->
+                                        <!--android:layout_height="35dp"-->
+                                        <!--android:layout_below="@+id/circleImage1"-->
+                                        <!--android:visibility="visible"/>-->
+
+                                        <!--<de.hdodenhof.circleimageview.CircleImageView-->
+                                        <!--android:id="@+id/circleImage5"-->
+                                        <!--android:layout_width="35dp"-->
+                                        <!--android:layout_height="35dp"-->
+                                        <!--android:visibility="visible"-->
+                                        <!--android:layout_below="@+id/circleImage2"-->
+                                        <!--android:layout_toEndOf="@+id/circleImage4"-->
+                                        <!--android:layout_toRightOf="@+id/circleImage4" />-->
+
+                                        <!--<de.hdodenhof.circleimageview.CircleImageView-->
+                                        <!--android:id="@+id/circleImage6"-->
+                                        <!--android:layout_width="35dp"-->
+                                        <!--android:layout_height="35dp"-->
+                                        <!--android:visibility="visible"-->
+                                        <!--android:layout_below="@+id/circleImage3"-->
+                                        <!--android:layout_toEndOf="@+id/circleImage5"-->
+                                        <!--android:layout_toRightOf="@+id/circleImage5"/>-->
+
+
+                                        <!--</RelativeLayout>-->
+
+                                    </LinearLayout>
+
                                     <ImageView
                                         android:id="@+id/pizzaImage"
-                                        android:layout_width="220dp"
-                                        android:layout_height="220dp"
-                                        android:src="@drawable/pizza"
-                                        android:layout_centerInParent="true"/>
+                                        android:layout_width="175dp"
+                                        android:layout_height="180dp"
+                                        android:layout_centerInParent="true"
+                                        android:src="@drawable/pizza" />
                                 </RelativeLayout>
 
 
