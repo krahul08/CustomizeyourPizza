@@ -451,10 +451,26 @@ public class CategoryActivity extends AppCompatActivity implements CategoryViews
         if (position == 0) {
 //            circleImage1.setVisibility(View.VISIBLE);
             innerLeftLayout.setBackground(getResources().getDrawable(R.drawable.left_half_circle_design));
+            innerRightLayout.setBackground(getResources().getDrawable(R.drawable.right_half_circle_design));
+
             Glide.with(this).load(imageListData.get(0).getSub_category_image()).into(leftImage1);
             Glide.with(this).load(imageListData.get(0).getSub_category_image()).into(leftImage2);
             Glide.with(this).load(imageListData.get(0).getSub_category_image()).into(leftImage7);
             Glide.with(this).load(imageListData.get(0).getSub_category_image()).into(leftImage4);
+            Glide.with(this).load(imageListData.get(0).getSub_category_image()).into(leftImage5);
+            Glide.with(this).load(imageListData.get(0).getSub_category_image()).into(leftImage6);
+            Glide.with(this).load(imageListData.get(0).getSub_category_image()).into(leftImage8);
+            Glide.with(this).load(imageListData.get(0).getSub_category_image()).into(leftImage9);
+            Glide.with(this).load(imageListData.get(0).getSub_category_image()).into(rightImage1);
+            Glide.with(this).load(imageListData.get(0).getSub_category_image()).into(rightImage2);
+            Glide.with(this).load(imageListData.get(0).getSub_category_image()).into(rightImage3);
+            Glide.with(this).load(imageListData.get(0).getSub_category_image()).into(rightImage5);
+            Glide.with(this).load(imageListData.get(0).getSub_category_image()).into(rightImage6);
+            Glide.with(this).load(imageListData.get(0).getSub_category_image()).into(rightImage7);
+            Glide.with(this).load(imageListData.get(0).getSub_category_image()).into(rightImage8);
+            Glide.with(this).load(imageListData.get(0).getSub_category_image()).into(rightImage9);
+            Glide.with(this).load(imageListData.get(0).getSub_category_image()).into(rightImage10);
+            Glide.with(this).load(imageListData.get(0).getSub_category_image()).into(rightImage11);
         } else {
 //            circleImage1.setVisibility(View.GONE);
 
@@ -462,35 +478,78 @@ public class CategoryActivity extends AppCompatActivity implements CategoryViews
         if (position == 1) {
 //            circleImage2.setVisibility(View.VISIBLE);
             innerLeftLayout.setBackground(getResources().getDrawable(R.drawable.left_half_circle_design));
+            innerRightLayout.setBackground(getResources().getDrawable(R.drawable.right_half_circle_design));
 
+            Glide.with(this).load(imageListData.get(1).getSub_category_image()).into(leftImage1);
+            Glide.with(this).load(imageListData.get(1).getSub_category_image()).into(leftImage2);
+            Glide.with(this).load(imageListData.get(1).getSub_category_image()).into(leftImage7);
+            Glide.with(this).load(imageListData.get(1).getSub_category_image()).into(leftImage4);
             Glide.with(this).load(imageListData.get(1).getSub_category_image()).into(leftImage5);
             Glide.with(this).load(imageListData.get(1).getSub_category_image()).into(leftImage6);
-            Glide.with(this).load(imageListData.get(1).getSub_category_image()).into(leftImage7);
             Glide.with(this).load(imageListData.get(1).getSub_category_image()).into(leftImage8);
+            Glide.with(this).load(imageListData.get(1).getSub_category_image()).into(leftImage9);
+            Glide.with(this).load(imageListData.get(1).getSub_category_image()).into(rightImage1);
+            Glide.with(this).load(imageListData.get(1).getSub_category_image()).into(rightImage2);
+            Glide.with(this).load(imageListData.get(1).getSub_category_image()).into(rightImage3);
+            Glide.with(this).load(imageListData.get(1).getSub_category_image()).into(rightImage5);
+            Glide.with(this).load(imageListData.get(1).getSub_category_image()).into(rightImage6);
+            Glide.with(this).load(imageListData.get(1).getSub_category_image()).into(rightImage7);
+            Glide.with(this).load(imageListData.get(1).getSub_category_image()).into(rightImage8);
+            Glide.with(this).load(imageListData.get(1).getSub_category_image()).into(rightImage9);
+            Glide.with(this).load(imageListData.get(1).getSub_category_image()).into(rightImage10);
+            Glide.with(this).load(imageListData.get(1).getSub_category_image()).into(rightImage11);
         } else {
 //            circleImage2.setVisibility(View.GONE);
         }
 
         if (position == 2) {
+            innerLeftLayout.setBackground(getResources().getDrawable(R.drawable.left_half_circle_design));
             innerRightLayout.setBackground(getResources().getDrawable(R.drawable.right_half_circle_design));
 
-//            circleImage3.setVisibility(View.VISIBLE);
+            Glide.with(this).load(imageListData.get(2).getSub_category_image()).into(leftImage1);
+            Glide.with(this).load(imageListData.get(2).getSub_category_image()).into(leftImage2);
+            Glide.with(this).load(imageListData.get(2).getSub_category_image()).into(leftImage7);
+            Glide.with(this).load(imageListData.get(2).getSub_category_image()).into(leftImage4);
+            Glide.with(this).load(imageListData.get(2).getSub_category_image()).into(leftImage5);
+            Glide.with(this).load(imageListData.get(2).getSub_category_image()).into(leftImage6);
+            Glide.with(this).load(imageListData.get(2).getSub_category_image()).into(leftImage8);
+            Glide.with(this).load(imageListData.get(2).getSub_category_image()).into(leftImage9);
             Glide.with(this).load(imageListData.get(2).getSub_category_image()).into(rightImage1);
             Glide.with(this).load(imageListData.get(2).getSub_category_image()).into(rightImage2);
-            Glide.with(this).load(imageListData.get(2).getSub_category_image()).into(rightImage9);
+            Glide.with(this).load(imageListData.get(2).getSub_category_image()).into(rightImage3);
             Glide.with(this).load(imageListData.get(2).getSub_category_image()).into(rightImage5);
+            Glide.with(this).load(imageListData.get(2).getSub_category_image()).into(rightImage6);
+            Glide.with(this).load(imageListData.get(2).getSub_category_image()).into(rightImage7);
+            Glide.with(this).load(imageListData.get(2).getSub_category_image()).into(rightImage8);
+            Glide.with(this).load(imageListData.get(2).getSub_category_image()).into(rightImage9);
+            Glide.with(this).load(imageListData.get(2).getSub_category_image()).into(rightImage10);
+            Glide.with(this).load(imageListData.get(2).getSub_category_image()).into(rightImage11);
 //        }else {
 //            circleImage3.setVisibility(View.GONE);
         }
 
         if (position == 3) {
+            innerLeftLayout.setBackground(getResources().getDrawable(R.drawable.left_half_circle_design));
             innerRightLayout.setBackground(getResources().getDrawable(R.drawable.right_half_circle_design));
 
-//            circleImage4.setVisibility(View.VISIBLE);
+            Glide.with(this).load(imageListData.get(3).getSub_category_image()).into(leftImage1);
+            Glide.with(this).load(imageListData.get(3).getSub_category_image()).into(leftImage2);
+            Glide.with(this).load(imageListData.get(3).getSub_category_image()).into(leftImage7);
+            Glide.with(this).load(imageListData.get(3).getSub_category_image()).into(leftImage4);
+            Glide.with(this).load(imageListData.get(3).getSub_category_image()).into(leftImage5);
+            Glide.with(this).load(imageListData.get(3).getSub_category_image()).into(leftImage6);
+            Glide.with(this).load(imageListData.get(3).getSub_category_image()).into(leftImage8);
+            Glide.with(this).load(imageListData.get(3).getSub_category_image()).into(leftImage9);
+            Glide.with(this).load(imageListData.get(3).getSub_category_image()).into(rightImage1);
+            Glide.with(this).load(imageListData.get(3).getSub_category_image()).into(rightImage2);
+            Glide.with(this).load(imageListData.get(3).getSub_category_image()).into(rightImage3);
+            Glide.with(this).load(imageListData.get(3).getSub_category_image()).into(rightImage5);
             Glide.with(this).load(imageListData.get(3).getSub_category_image()).into(rightImage6);
             Glide.with(this).load(imageListData.get(3).getSub_category_image()).into(rightImage7);
             Glide.with(this).load(imageListData.get(3).getSub_category_image()).into(rightImage8);
             Glide.with(this).load(imageListData.get(3).getSub_category_image()).into(rightImage9);
+            Glide.with(this).load(imageListData.get(3).getSub_category_image()).into(rightImage10);
+            Glide.with(this).load(imageListData.get(3).getSub_category_image()).into(rightImage11);
         } else {
 //            circleImage4.setVisibility(View.GONE);
         }
@@ -498,13 +557,28 @@ public class CategoryActivity extends AppCompatActivity implements CategoryViews
         if (position == 4) {
 
 //            circleImage5.setVisibility(View.VISIBLE);
+            innerLeftLayout.setBackground(getResources().getDrawable(R.drawable.left_half_circle_design));
             innerRightLayout.setBackground(getResources().getDrawable(R.drawable.right_half_circle_design));
 
-            Glide.with(this).load(imageListData.get(4).getSub_category_image()).into(rightImage10);
-            Glide.with(this).load(imageListData.get(4).getSub_category_image()).into(rightImage11);
+
+            Glide.with(this).load(imageListData.get(4).getSub_category_image()).into(leftImage1);
+            Glide.with(this).load(imageListData.get(4).getSub_category_image()).into(leftImage2);
+            Glide.with(this).load(imageListData.get(4).getSub_category_image()).into(leftImage7);
+            Glide.with(this).load(imageListData.get(4).getSub_category_image()).into(leftImage4);
+            Glide.with(this).load(imageListData.get(4).getSub_category_image()).into(leftImage5);
+            Glide.with(this).load(imageListData.get(4).getSub_category_image()).into(leftImage6);
+            Glide.with(this).load(imageListData.get(4).getSub_category_image()).into(leftImage8);
+            Glide.with(this).load(imageListData.get(4).getSub_category_image()).into(leftImage9);
             Glide.with(this).load(imageListData.get(4).getSub_category_image()).into(rightImage1);
             Glide.with(this).load(imageListData.get(4).getSub_category_image()).into(rightImage2);
+            Glide.with(this).load(imageListData.get(4).getSub_category_image()).into(rightImage3);
+            Glide.with(this).load(imageListData.get(4).getSub_category_image()).into(rightImage5);
+            Glide.with(this).load(imageListData.get(4).getSub_category_image()).into(rightImage6);
             Glide.with(this).load(imageListData.get(4).getSub_category_image()).into(rightImage7);
+            Glide.with(this).load(imageListData.get(4).getSub_category_image()).into(rightImage8);
+            Glide.with(this).load(imageListData.get(4).getSub_category_image()).into(rightImage9);
+            Glide.with(this).load(imageListData.get(4).getSub_category_image()).into(rightImage10);
+            Glide.with(this).load(imageListData.get(4).getSub_category_image()).into(rightImage11);
         } else {
 //            circleImage5.setVisibility(View.GONE);
         }
@@ -512,11 +586,26 @@ public class CategoryActivity extends AppCompatActivity implements CategoryViews
         if (position == 5) {
 //            circleImage6.setVisibility(View.VISIBLE);
             innerLeftLayout.setBackground(getResources().getDrawable(R.drawable.left_half_circle_design));
-            Glide.with(this).load(imageListData.get(5).getSub_category_image()).into(leftImage7);
-            Glide.with(this).load(imageListData.get(5).getSub_category_image()).into(leftImage2);
+            innerRightLayout.setBackground(getResources().getDrawable(R.drawable.right_half_circle_design));
+
             Glide.with(this).load(imageListData.get(5).getSub_category_image()).into(leftImage1);
+            Glide.with(this).load(imageListData.get(5).getSub_category_image()).into(leftImage2);
+            Glide.with(this).load(imageListData.get(5).getSub_category_image()).into(leftImage7);
+            Glide.with(this).load(imageListData.get(5).getSub_category_image()).into(leftImage4);
             Glide.with(this).load(imageListData.get(5).getSub_category_image()).into(leftImage5);
+            Glide.with(this).load(imageListData.get(5).getSub_category_image()).into(leftImage6);
+            Glide.with(this).load(imageListData.get(5).getSub_category_image()).into(leftImage8);
             Glide.with(this).load(imageListData.get(5).getSub_category_image()).into(leftImage9);
+            Glide.with(this).load(imageListData.get(5).getSub_category_image()).into(rightImage1);
+            Glide.with(this).load(imageListData.get(5).getSub_category_image()).into(rightImage2);
+            Glide.with(this).load(imageListData.get(5).getSub_category_image()).into(rightImage3);
+            Glide.with(this).load(imageListData.get(5).getSub_category_image()).into(rightImage5);
+            Glide.with(this).load(imageListData.get(5).getSub_category_image()).into(rightImage6);
+            Glide.with(this).load(imageListData.get(5).getSub_category_image()).into(rightImage7);
+            Glide.with(this).load(imageListData.get(5).getSub_category_image()).into(rightImage8);
+            Glide.with(this).load(imageListData.get(5).getSub_category_image()).into(rightImage9);
+            Glide.with(this).load(imageListData.get(5).getSub_category_image()).into(rightImage10);
+            Glide.with(this).load(imageListData.get(5).getSub_category_image()).into(rightImage11);
         } else {
 //            circleImage6.setVisibility(View.GONE);
         }
